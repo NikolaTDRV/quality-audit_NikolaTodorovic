@@ -1,0 +1,860 @@
+{
+ "TC-NOM-01": {
+  "statut": "Pass",
+  "obtenu": "6 restaurants listés par note décroissante, Night Sushi marqué FERMÉ.",
+  "bug": "",
+  "preuves": [
+   "TC-NOM-01_01_accueil.png",
+   "TC-NOM-01.txt"
+  ]
+ },
+ "TC-NOM-02": {
+  "statut": "Pass",
+  "obtenu": "Compte créé, utilisateur connecté et redirigé vers l'accueil.",
+  "bug": "",
+  "preuves": [
+   "TC-NOM-02_01_formulaire.png",
+   "TC-NOM-02_02_apres_inscription.png"
+  ]
+ },
+ "TC-NOM-03": {
+  "statut": "Pass",
+  "obtenu": "Connexion réussie, redirection vers l'accueil, lien Déconnexion visible.",
+  "bug": "",
+  "preuves": [
+   "TC-NOM-03_01_connecte.png"
+  ]
+ },
+ "TC-NOM-04": {
+  "statut": "Pass",
+  "obtenu": "Menu affiché : produits, prix, stock, catégories et formulaire d'ajout.",
+  "bug": "",
+  "preuves": [
+   "TC-NOM-04_01_menu_burger_factory.png"
+  ]
+ },
+ "TC-NOM-05": {
+  "statut": "Pass",
+  "obtenu": "Message de confirmation ; panier : sous-total 11,90 €, livraison 2,99 €, total 14,89 €.",
+  "bug": "",
+  "preuves": [
+   "TC-NOM-05_01_apres_ajout.png",
+   "TC-NOM-05_02_panier.png",
+   "TC-NOM-05.txt"
+  ]
+ },
+ "TC-NOM-06": {
+  "statut": "Pass",
+  "obtenu": "Sous-total 35,70 € ; total 38,69 €.",
+  "bug": "",
+  "preuves": [
+   "TC-NOM-06_01_panier_x3.png"
+  ]
+ },
+ "TC-NOM-07": {
+  "statut": "Pass",
+  "obtenu": "Commande #2 confirmée ; réduction 2,38 € ; total 24.41 €.",
+  "bug": "",
+  "preuves": [
+   "TC-NOM-07_01_checkout.png",
+   "TC-NOM-07_02_recap_coupon.png",
+   "TC-NOM-07_03_commande_confirmee.png",
+   "TC-NOM-07.txt"
+  ]
+ },
+ "TC-NOM-08": {
+  "statut": "Pass",
+  "obtenu": "Commande #2 passée à l'état annulé (badge « cancelled »).",
+  "bug": "",
+  "preuves": [
+   "TC-NOM-08_01_annulee.png",
+   "TC-NOM-08.txt"
+  ]
+ },
+ "TC-NOM-09": {
+  "statut": "Pass",
+  "obtenu": "200 et 6 restaurants au format JSON.",
+  "bug": "",
+  "preuves": [
+   "TC-NOM-09.txt"
+  ]
+ },
+ "TC-NOM-10": {
+  "statut": "Pass",
+  "obtenu": "201, commande confirmée, total 14,89 €.",
+  "bug": "",
+  "preuves": [
+   "TC-NOM-10.txt"
+  ]
+ },
+ "TC-NOM-11": {
+  "statut": "Pass",
+  "obtenu": "Seul Pizza Roma est affiché.",
+  "bug": "",
+  "preuves": [
+   "TC-NOM-11_01_recherche_pizza.png"
+  ]
+ },
+ "TC-NOM-12": {
+  "statut": "Pass",
+  "obtenu": "Restaurants triés par délai croissant.",
+  "bug": "",
+  "preuves": [
+   "TC-NOM-12_01_tri_delai.png",
+   "TC-NOM-12.txt"
+  ]
+ },
+ "TC-NOM-13": {
+  "statut": "Pass",
+  "obtenu": "Adresse « Travail » ajoutée et définie par défaut.",
+  "bug": "",
+  "preuves": [
+   "TC-NOM-13_01_profil.png"
+  ]
+ },
+ "TC-NOM-14": {
+  "statut": "Pass",
+  "obtenu": "Panier rempli avec Classic Burger et Frites maison.",
+  "bug": "",
+  "preuves": [
+   "TC-NOM-14_01_panier_recommande.png"
+  ]
+ },
+ "TC-NOM-15": {
+  "statut": "Blocked",
+  "obtenu": "Aucun bouton « favori » dans l'interface : la route POST /favorite/<id> existe mais n'est reliée à aucun écran. Cas non exécutable par l'UI.",
+  "bug": "BUG-022",
+  "preuves": [
+   "TC-NOM-15_01_menu_pizza_roma.png",
+   "TC-NOM-15.txt"
+  ]
+ },
+ "TC-NOM-16": {
+  "statut": "Blocked",
+  "obtenu": "Aucun bouton « Supprimer » dans l'interface : la route /profile/address/<id>/delete n'est reliée à aucun écran.",
+  "bug": "BUG-022",
+  "preuves": [
+   "TC-NOM-16_01_profil_adresses.png",
+   "TC-NOM-16.txt"
+  ]
+ },
+ "TC-LIM-01": {
+  "statut": "Pass",
+  "obtenu": "Coupon valide, réduction 2,00 € (10 % de 20 €).",
+  "bug": "",
+  "preuves": [
+   "TC-LIM-01.txt"
+  ]
+ },
+ "TC-LIM-02": {
+  "statut": "Pass",
+  "obtenu": "Coupon refusé : minimum 20 € non atteint.",
+  "bug": "",
+  "preuves": [
+   "TC-LIM-02.txt"
+  ]
+ },
+ "TC-LIM-03": {
+  "statut": "Pass",
+  "obtenu": "Réduction plafonnée à 8,00 € (max_discount de WELCOME10).",
+  "bug": "",
+  "preuves": [
+   "TC-LIM-03.txt"
+  ]
+ },
+ "TC-LIM-04": {
+  "statut": "Pass",
+  "obtenu": "7 caractères refusé (message), 8 caractères accepté.",
+  "bug": "",
+  "preuves": [
+   "TC-LIM-04_01_mdp_7_car.png",
+   "TC-LIM-04_02_mdp_8_car.png",
+   "TC-LIM-04.txt"
+  ]
+ },
+ "TC-LIM-05": {
+  "statut": "Pass",
+  "obtenu": "20 → 201 ; 21 → 400.",
+  "bug": "",
+  "preuves": [
+   "TC-LIM-05.txt"
+  ]
+ },
+ "TC-LIM-06": {
+  "statut": "Pass",
+  "obtenu": "0, -1 et « abc » → 400.",
+  "bug": "",
+  "preuves": [
+   "TC-LIM-06.txt"
+  ]
+ },
+ "TC-LIM-07": {
+  "statut": "Fail",
+  "obtenu": "≤2,00 € → ['Couscous Atlas', 'Tokyo Bowl', 'Burger Factory', 'Pizza Roma', 'Night Sushi'] ; ≤2,50 € → ['Couscous Atlas', 'Tokyo Bowl', 'Burger Factory', 'Night Sushi'] (filtre inversé : affiche les frais ≥ plafond)",
+  "bug": "BUG-006",
+  "preuves": [
+   "TC-LIM-07_01_max_2.00.png",
+   "TC-LIM-07_02_max_2.50.png",
+   "TC-LIM-07.txt"
+  ]
+ },
+ "TC-LIM-08": {
+  "statut": "Fail",
+  "obtenu": "Quantité 3 acceptée au panier pour un stock de 2 (sous-total 47.70 €), commande #2 confirmée, stock final -1.",
+  "bug": "BUG-004",
+  "preuves": [
+   "TC-LIM-08_01_panier_3_pour_stock_2.png",
+   "TC-LIM-08_02_commande_3_pour_stock_2.png",
+   "TC-LIM-08_03_stock_apres_commande.png",
+   "TC-LIM-08.txt"
+  ]
+ },
+ "TC-LIM-09": {
+  "statut": "Fail",
+  "obtenu": "Veggie Burger (stock 0) ajouté au panier. Flashs : ['Veggie Burger ajouté au panier.', 'HORS STOCK — Ce produit est actuellement indisponible.']",
+  "bug": "BUG-004",
+  "preuves": [
+   "TC-LIM-09_01_apres_ajout.png",
+   "TC-LIM-09_02_panier.png"
+  ]
+ },
+ "TC-LIM-10": {
+  "statut": "Fail",
+  "obtenu": "1000 × Classic Burger au panier : sous-total 11900.00 € pour un stock de 100.",
+  "bug": "BUG-004",
+  "preuves": [
+   "TC-LIM-10_01_panier_1000.png",
+   "TC-LIM-10.txt"
+  ]
+ },
+ "TC-LIM-11": {
+  "statut": "Fail",
+  "obtenu": "6 restaurants affichés pour q=% : le caractère joker n'est pas échappé.",
+  "bug": "BUG-013",
+  "preuves": [
+   "TC-LIM-11_01_recherche_pourcent.png"
+  ]
+ },
+ "TC-LIM-12": {
+  "statut": "Fail",
+  "obtenu": "Compte créé avec un nom de 121 caractères : aucune longueur maximale n'est contrôlée.",
+  "bug": "BUG-024",
+  "preuves": [
+   "TC-LIM-12_01_apres_nom_121.png"
+  ]
+ },
+ "TC-LIM-13": {
+  "statut": "Fail",
+  "obtenu": "HTTP 201 : 40 unités acceptées via deux lignes de 20.",
+  "bug": "BUG-004",
+  "preuves": [
+   "TC-LIM-13.txt"
+  ]
+ },
+ "TC-ERR-01": {
+  "statut": "Pass",
+  "obtenu": "Message « Email ou mot de passe incorrect », pas de connexion.",
+  "bug": "",
+  "preuves": [
+   "TC-ERR-01_01_echec_connexion.png"
+  ]
+ },
+ "TC-ERR-02": {
+  "statut": "Pass",
+  "obtenu": "Refus : « Un compte existe déjà avec cet email ».",
+  "bug": "",
+  "preuves": [
+   "TC-ERR-02_01_email_existant.png"
+  ]
+ },
+ "TC-ERR-03": {
+  "statut": "Pass",
+  "obtenu": "401 Unauthorized.",
+  "bug": "",
+  "preuves": [
+   "TC-ERR-03.txt"
+  ]
+ },
+ "TC-ERR-04": {
+  "statut": "Pass",
+  "obtenu": "401 Unauthorized.",
+  "bug": "",
+  "preuves": [
+   "TC-ERR-04.txt"
+  ]
+ },
+ "TC-ERR-05": {
+  "statut": "Fail",
+  "obtenu": "HTTP 404 mais Content-Type « text/html; charset=utf-8 » : corps HTML au lieu de JSON (contrat d'erreur non respecté, voir openapi.yaml).",
+  "bug": "BUG-011",
+  "preuves": [
+   "TC-ERR-05.txt"
+  ]
+ },
+ "TC-ERR-06": {
+  "statut": "Pass",
+  "obtenu": "400 « items is required… ».",
+  "bug": "",
+  "preuves": [
+   "TC-ERR-06.txt"
+  ]
+ },
+ "TC-ERR-07": {
+  "statut": "Pass",
+  "obtenu": "400 « subtotal must be numeric ».",
+  "bug": "",
+  "preuves": [
+   "TC-ERR-07.txt"
+  ]
+ },
+ "TC-ERR-08": {
+  "statut": "Fail",
+  "obtenu": "Codes obtenus [500, 500, 500] (valeurs non finies : 500 ou acceptées)",
+  "bug": "BUG-010",
+  "preuves": [
+   "TC-ERR-08.txt"
+  ]
+ },
+ "TC-ERR-09": {
+  "statut": "Fail",
+  "obtenu": "HTTP 500 : erreur serveur non gérée.",
+  "bug": "BUG-010",
+  "preuves": [
+   "TC-ERR-09.txt"
+  ]
+ },
+ "TC-ERR-10": {
+  "statut": "Fail",
+  "obtenu": "Codes 500 / 500",
+  "bug": "BUG-010",
+  "preuves": [
+   "TC-ERR-10.txt"
+  ]
+ },
+ "TC-ERR-11": {
+  "statut": "Pass",
+  "obtenu": "Redirection avec « Accès réservé aux administrateurs ».",
+  "bug": "",
+  "preuves": [
+   "TC-ERR-11_01_admin_client.png"
+  ]
+ },
+ "TC-ERR-12": {
+  "statut": "Pass",
+  "obtenu": "« Commande inaccessible », contenu non affiché.",
+  "bug": "",
+  "preuves": [
+   "TC-ERR-12_01_commande_autrui.png"
+  ]
+ },
+ "TC-ERR-13": {
+  "statut": "Pass",
+  "obtenu": "Message « Coupon invalide ou expiré », aucune réduction.",
+  "bug": "",
+  "preuves": [
+   "TC-ERR-13_01_coupon_expire.png"
+  ]
+ },
+ "TC-ERR-14": {
+  "statut": "Fail",
+  "obtenu": "HTTP 201 : commande créée, coupon ignoré silencieusement (aucune erreur).",
+  "bug": "BUG-009",
+  "preuves": [
+   "TC-ERR-14.txt"
+  ]
+ },
+ "TC-ERR-15": {
+  "statut": "Pass",
+  "obtenu": "« Adresse de livraison invalide », pas de commande.",
+  "bug": "",
+  "preuves": [
+   "TC-ERR-15_01_adresse_autrui.png"
+  ]
+ },
+ "TC-ERR-16": {
+  "statut": "Fail",
+  "obtenu": "Après connexion, le navigateur est envoyé vers https://example.org/ (redirection ouverte via ?next=).",
+  "bug": "BUG-015",
+  "preuves": [
+   "TC-ERR-16_01_apres_connexion.png",
+   "TC-ERR-16.txt"
+  ]
+ },
+ "TC-ERR-17": {
+  "statut": "Pass",
+  "obtenu": "Redirection vers le panier, message « panier vide ».",
+  "bug": "",
+  "preuves": [
+   "TC-ERR-17_01_panier_vide.png"
+  ]
+ },
+ "TC-ERR-18": {
+  "statut": "Pass",
+  "obtenu": "Message « Quantité invalide », pas d'erreur 500.",
+  "bug": "",
+  "preuves": [
+   "TC-ERR-18_01_quantite_abc.png"
+  ]
+ },
+ "TC-ERR-19": {
+  "statut": "Pass",
+  "obtenu": "409 « order cannot be cancelled ».",
+  "bug": "",
+  "preuves": [
+   "TC-ERR-19.txt"
+  ]
+ },
+ "TC-ERR-20": {
+  "statut": "Fail",
+  "obtenu": "HTTP 201 : commande créée sans réduction ni message.",
+  "bug": "BUG-009",
+  "preuves": [
+   "TC-ERR-20.txt"
+  ]
+ },
+ "TC-ERR-21": {
+  "statut": "Blocked",
+  "obtenu": "Les 25 produits du jeu de données sont disponibles et aucune interface ne permet d'en rendre un indisponible : cas non exécutable sans modifier la base.",
+  "bug": "BUG-022",
+  "preuves": [
+   "TC-ERR-21.txt"
+  ]
+ },
+ "TC-ERR-22": {
+  "statut": "Fail",
+  "obtenu": "HTTP 200 {'code': 'WELCOME10', 'discount': 8.0, 'discount_percent': 10.0, 'valid': True} : le serveur fait confiance au sous-total envoyé par le client.",
+  "bug": "BUG-012",
+  "preuves": [
+   "TC-ERR-22.txt"
+  ]
+ },
+ "TC-ERR-23": {
+  "statut": "Fail",
+  "obtenu": "Aucun jeton CSRF dans les formulaires POST ; GET /logout déconnecte (déconnexion forcée par simple lien/image).",
+  "bug": "BUG-023",
+  "preuves": [
+   "TC-ERR-23_01_apres_get_logout.png",
+   "TC-ERR-23.txt"
+  ]
+ },
+ "TC-RM-01": {
+  "statut": "Pass",
+  "obtenu": "Message « même restaurant », seul le produit de Tokyo Bowl reste au panier.",
+  "bug": "",
+  "preuves": [
+   "TC-RM-01_01_message_mono_restaurant.png"
+  ]
+ },
+ "TC-RM-02": {
+  "statut": "Fail",
+  "obtenu": "Commande 2 confirmée chez Night Sushi (FERMÉ) pour 14,00 €.",
+  "bug": "BUG-002",
+  "preuves": [
+   "TC-RM-02_01_menu_restaurant_ferme.png",
+   "TC-RM-02_02_resultat_checkout.png",
+   "TC-RM-02.txt"
+  ]
+ },
+ "TC-RM-03": {
+  "statut": "Fail",
+  "obtenu": "HTTP 201 : commande créée chez un restaurant fermé.",
+  "bug": "BUG-002",
+  "preuves": [
+   "TC-RM-03.txt"
+  ]
+ },
+ "TC-RM-04": {
+  "statut": "Fail",
+  "obtenu": "Commande confirmée pour 3.50 € de produits (minimum du restaurant : 20 €).",
+  "bug": "BUG-005",
+  "preuves": [
+   "TC-RM-04_01_resultat.png"
+  ]
+ },
+ "TC-RM-05": {
+  "statut": "Fail",
+  "obtenu": "HTTP 201 : commande créée sous le minimum.",
+  "bug": "BUG-005",
+  "preuves": [
+   "TC-RM-05.txt"
+  ]
+ },
+ "TC-RM-06": {
+  "statut": "Fail",
+  "obtenu": "Commande acceptée avec 1,00 € remis pour 14,89 € (monnaie négative affichée) ; un montant vide est accepté aussi : True.",
+  "bug": "BUG-003",
+  "preuves": [
+   "TC-RM-06_01_cash_1_euro.png",
+   "TC-RM-06_02_resultat.png",
+   "TC-RM-06_03_cash_vide.png",
+   "TC-RM-06.txt"
+  ]
+ },
+ "TC-RM-07": {
+  "statut": "Fail",
+  "obtenu": "HTTP 201 : '{\\n  \"cash_received\": 1.0,\\n  \"change_due\": -13.89,\\n  \"created_at\": \"2026-10-12T19:20:37.387675\",\\n  \"delivery_fee\": 2.99,\\n'",
+  "bug": "BUG-003",
+  "preuves": [
+   "TC-RM-07.txt"
+  ]
+ },
+ "TC-RM-08": {
+  "statut": "Pass",
+  "obtenu": "Monnaie à rendre 5,11 €.",
+  "bug": "",
+  "preuves": [
+   "TC-RM-08_01_commande_cash.png",
+   "TC-RM-08.txt"
+  ]
+ },
+ "TC-RM-09": {
+  "statut": "Fail",
+  "obtenu": "2 commandes créées pour un seul paiement PayPal ([2, 3]).",
+  "bug": "BUG-001",
+  "preuves": [
+   "TC-RM-09_01_commande_paypal.png",
+   "TC-RM-09_02_liste_commandes.png",
+   "TC-RM-09_paypal_double_commande.webm",
+   "TC-RM-09.txt"
+  ]
+ },
+ "TC-RM-10": {
+  "statut": "Fail",
+  "obtenu": "2 commandes créées par une seule requête PayPal ; stock du Classic Burger 100 → 98 (−2 pour 1 unité commandée).",
+  "bug": "BUG-001",
+  "preuves": [
+   "TC-RM-10.txt"
+  ]
+ },
+ "TC-RM-11": {
+  "statut": "Fail",
+  "obtenu": "Offre annoncée « -15 % » mais réduction de 3.58 € sur 35.80 € (= 10 %), au lieu de 5.37 €.",
+  "bug": "BUG-007",
+  "preuves": [
+   "TC-RM-11_01_offre_annoncee.png",
+   "TC-RM-11_02_recap.png",
+   "TC-RM-11.txt"
+  ]
+ },
+ "TC-RM-12": {
+  "statut": "Pass",
+  "obtenu": "Livraison offerte : réduction 3,49 €, total = sous-total.",
+  "bug": "",
+  "preuves": [
+   "TC-RM-12_01_recap_tokyo30.png",
+   "TC-RM-12.txt"
+  ]
+ },
+ "TC-RM-13": {
+  "statut": "Fail",
+  "obtenu": "Réduction de 3.49 € appliquée chez Burger Factory (code réservé à Tokyo Bowl : « Livraison gratuite dès 30 € avec TOKYO30 »).",
+  "bug": "BUG-008",
+  "preuves": [
+   "TC-RM-13_01_tokyo30_chez_burger.png",
+   "TC-RM-13.txt"
+  ]
+ },
+ "TC-RM-14": {
+  "statut": "Pass",
+  "obtenu": "Message « Montant minimum de 20.00 € requis », pas de réduction.",
+  "bug": "",
+  "preuves": [
+   "TC-RM-14_01_minimum_coupon.png"
+  ]
+ },
+ "TC-RM-15": {
+  "statut": "Pass",
+  "obtenu": "Annulation refusée, statut inchangé.",
+  "bug": "",
+  "preuves": [
+   "TC-RM-15_01_commande_livree.png",
+   "TC-RM-15_02_apres_post_annulation.png",
+   "TC-RM-15.txt"
+  ]
+ },
+ "TC-RM-16": {
+  "statut": "Fail",
+  "obtenu": "Stock 100 → 98 → 98 après annulation ; la commande annulée reste « paid » (aucun remboursement ni restitution).",
+  "bug": "BUG-016",
+  "preuves": [
+   "TC-RM-16_01_apres_annulation.png",
+   "TC-RM-16.txt"
+  ]
+ },
+ "TC-RM-17": {
+  "statut": "Fail",
+  "obtenu": "Transitions arrière acceptées : [('confirmed', ['Statut mis à jour.']), 'confirmed', ('cancelled', ['Statut mis à jour.']), 'cancelled']",
+  "bug": "BUG-017",
+  "preuves": [
+   "TC-RM-17_01_admin.png",
+   "TC-RM-17_02_apres_transitions.png",
+   "TC-RM-17.txt"
+  ]
+ },
+ "TC-RM-18": {
+  "statut": "Fail",
+  "obtenu": "Avis publié sans commande préalable (flashs ['Merci pour votre avis !', 'HORS STOCK — Ce produit est actuellement indisponible.']).",
+  "bug": "BUG-018",
+  "preuves": [
+   "TC-RM-18_01_avis_publie.png"
+  ]
+ },
+ "TC-RM-19": {
+  "statut": "Fail",
+  "obtenu": "Les avis publiés n'influencent pas la note affichée (4.3 inchangée après deux avis à 1/5) : la note est une valeur fixe, pas une moyenne.",
+  "bug": "BUG-018",
+  "preuves": [
+   "TC-RM-19_01_restaurant_apres_avis.png",
+   "TC-RM-19.txt"
+  ]
+ },
+ "TC-RM-20": {
+  "statut": "Fail",
+  "obtenu": "Panier avec deux restaurants (Burger Factory + Tokyo Bowl) : 25.40 € ; la commande #2 est confirmée avec les deux (voir capture).",
+  "bug": "BUG-019",
+  "preuves": [
+   "TC-RM-20_01_panier_deux_restaurants.png",
+   "TC-RM-20_02_commande_mixte.png",
+   "TC-RM-20.txt"
+  ]
+ },
+ "TC-RM-21": {
+  "statut": "Pass",
+  "obtenu": "Stock 100 → 98.",
+  "bug": "",
+  "preuves": []
+ },
+ "TC-RM-22": {
+  "statut": "Fail",
+  "obtenu": "Commande confirmée avec une adresse de livraison vide (option « Domicile — , »).",
+  "bug": "BUG-014",
+  "preuves": [
+   "TC-RM-22_01_checkout_adresse_vide.png",
+   "TC-RM-22_02_commande.png",
+   "TC-RM-22.txt"
+  ]
+ },
+ "TC-RM-23": {
+  "statut": "Fail",
+  "obtenu": "Après « Appliquer le coupon » : adresse « Domicile — 10 rue de Paris, 75 », note «  », paiement « card » (saisies perdues).",
+  "bug": "BUG-020",
+  "preuves": [
+   "TC-RM-23_01_avant_application.png",
+   "TC-RM-23_02_apres_application.png",
+   "TC-RM-23.txt"
+  ]
+ },
+ "TC-RM-24": {
+  "statut": "Fail",
+  "obtenu": "Heure affichée ['19:21'] alors qu'il est 21:21 à Paris : l'horaire est en UTC sans indication.",
+  "bug": "BUG-021",
+  "preuves": [
+   "TC-RM-24_01_commande_heure.png",
+   "TC-RM-24.txt"
+  ]
+ },
+ "TC-RM-25": {
+  "statut": "Skipped",
+  "obtenu": "Le code « WELCOME10 » est accepté à chaque commande (réductions ['2.38', '2.38']). Aucune spécification ne dit s'il est limité à la première commande : règle à clarifier avec le métier avant de conclure.",
+  "bug": "",
+  "preuves": [
+   "TC-RM-25.txt"
+  ]
+ },
+ "TC-ENV-01": {
+  "statut": "Fail",
+  "obtenu": "« bash: ./docker-entrypoint.sh: Permission denied ([Errno 13] Permission denied: './docker-entrypoint.sh') » (exit 126) ; mode Git 100644 : le conteneur ne peut pas démarrer sous Linux/macOS. (Daemon Docker indisponible dans cet environnement : l'échec est reproduit par exécution directe du script.)",
+  "bug": "BUG-025",
+  "preuves": [
+   "TC-ENV-01.txt"
+  ]
+ },
+ "TC-NFR-01": {
+  "statut": "Fail",
+  "obtenu": "4 commandes acceptées sur 4 pour un stock initial de 2 ; stock final 1.",
+  "bug": "BUG-004",
+  "preuves": [
+   "TC-NFR-01.txt"
+  ]
+ },
+ "TC-EXT-01": {
+  "statut": "Fail",
+  "obtenu": "Tests fournis non verts — 1 failed, 5 passed, 19 warnings in 1.14s. Le test test_api_orders_with_key échoue avec AttributeError « 'NoneType' object has no attribute 'id' » (app/routes/api.py:219) : l'API s'appuie sur le compte alice@example.com, absent de la base de test.",
+  "bug": "BUG-026",
+  "preuves": [
+   "TC-EXT-01.txt"
+  ]
+ },
+ "TC-EXT-02": {
+  "statut": "Pass",
+  "obtenu": "Swagger UI chargé (11 opérations), clé API acceptée via Authorize, exécution → 200.",
+  "bug": "",
+  "preuves": [
+   "TC-EXT-02_01_swagger_liste.png",
+   "TC-EXT-02_02_swagger_execute.png",
+   "TC-EXT-02.txt"
+  ]
+ },
+ "TC-EXT-03": {
+  "statut": "Fail",
+  "obtenu": "Débordement horizontal : 375 / 410 px",
+  "bug": "",
+  "preuves": [
+   "TC-EXT-03_01_accueil_mobile.png",
+   "TC-EXT-03_02_checkout_mobile.png",
+   "TC-EXT-03.txt"
+  ]
+ },
+ "TC-EXT-04": {
+  "statut": "Pass",
+  "obtenu": "Profil mis à jour et affiché dans l'en-tête.",
+  "bug": "",
+  "preuves": [
+   "TC-EXT-04_01_profil_mis_a_jour.png"
+  ]
+ },
+ "TC-EXT-05": {
+  "statut": "Pass",
+  "obtenu": "Restaurants avec au moins un plat végétarien : ['Couscous Atlas', 'Tokyo Bowl', 'Burger Factory', 'Green Kitchen', 'Pizza Roma'].",
+  "bug": "",
+  "preuves": [
+   "TC-EXT-05_01_vegetarien.png",
+   "TC-EXT-05.txt"
+  ]
+ },
+ "TC-EXT-06": {
+  "statut": "Pass",
+  "obtenu": "Seul Tokyo Bowl affiché.",
+  "bug": "",
+  "preuves": [
+   "TC-EXT-06_01_categorie_japonais.png"
+  ]
+ },
+ "TC-EXT-07": {
+  "statut": "Blocked",
+  "obtenu": "La route accepte ?category= et ?q= mais aucun contrôle de filtre n'est affiché sur la page du restaurant : filtrage inaccessible depuis l'interface.",
+  "bug": "BUG-022",
+  "preuves": [
+   "TC-EXT-07_01_menu_filtre_categorie.png",
+   "TC-EXT-07.txt"
+  ]
+ },
+ "TC-EXT-08": {
+  "statut": "Pass",
+  "obtenu": "Tableau de bord : compteurs et 10 dernières commandes.",
+  "bug": "",
+  "preuves": [
+   "TC-EXT-08_01_tableau_de_bord_admin.png",
+   "TC-EXT-08.txt"
+  ]
+ },
+ "TC-EXT-09": {
+  "statut": "Pass",
+  "obtenu": "Tri par frais de livraison croissants.",
+  "bug": "",
+  "preuves": [
+   "TC-EXT-09_01_tri_livraison.png",
+   "TC-EXT-09.txt"
+  ]
+ },
+ "TC-EXT-10": {
+  "statut": "Fail",
+  "obtenu": "Statuts affichés en anglais technique (['delivered']) et bouton « Annuler la commande » proposé sur la commande #1 livrée (le clic est refusé ensuite).",
+  "bug": "BUG-027",
+  "preuves": [
+   "TC-EXT-10_01_commande_livree_bouton.png",
+   "TC-EXT-10_02_liste_statuts.png",
+   "TC-EXT-10.txt"
+  ]
+ },
+ "TC-EXT-11": {
+  "statut": "Pass",
+  "obtenu": "Après déconnexion, /orders redirige vers /login.",
+  "bug": "",
+  "preuves": [
+   "TC-EXT-11_01_apres_deconnexion.png"
+  ]
+ },
+ "TC-EXT-12": {
+  "statut": "Pass",
+  "obtenu": "Console navigateur sans erreur.",
+  "bug": "",
+  "preuves": [
+   "TC-EXT-12_01_derniere_page.png",
+   "TC-EXT-12.txt"
+  ]
+ },
+ "TC-EXT-13": {
+  "statut": "Pass",
+  "obtenu": "La collection Postman fournie s'exécute sans erreur 5xx.",
+  "bug": "",
+  "preuves": [
+   "TC-EXT-13.txt"
+  ]
+ },
+ "TC-EXT-14": {
+  "statut": "Fail",
+  "obtenu": "Résultats : {'japonais': [], 'marocaine': [], 'Marocain': []} — la recherche ne porte que sur le nom du restaurant.",
+  "bug": "BUG-013",
+  "preuves": [
+   "TC-EXT-14_01_q_japonais.png",
+   "TC-EXT-14_02_q_marocaine.png",
+   "TC-EXT-14_03_q_Marocain.png",
+   "TC-EXT-14.txt"
+  ]
+ },
+ "TC-EXT-15": {
+  "statut": "Fail",
+  "obtenu": "Compte créé avec l'email « a@b » et le mot de passe « 12345678 » ; téléphone « abc » et code postal « ZZZZZ » acceptés.",
+  "bug": "BUG-024",
+  "preuves": [
+   "TC-EXT-15_01_email_a_at_b.png",
+   "TC-EXT-15_02_profil_valeurs_libres.png",
+   "TC-EXT-15.txt"
+  ]
+ },
+ "TC-EXT-16": {
+  "statut": "Fail",
+  "obtenu": "Coupon inconnu → 404 ; sous le minimum → 200 (valid:false) ; commande 999 → 404 en text/html; charset=utf-8.",
+  "bug": "BUG-011",
+  "preuves": [
+   "TC-EXT-16.txt"
+  ]
+ },
+ "TC-EXT-17": {
+  "statut": "Fail",
+  "obtenu": "Deux avis publiés par le même client sans commande, aucun avis n'est affiché sur la fiche du restaurant.",
+  "bug": "BUG-018",
+  "preuves": [
+   "TC-EXT-17_01_fiche_apres_avis.png",
+   "TC-EXT-17.txt"
+  ]
+ },
+ "TC-EXT-18": {
+  "statut": "Fail",
+  "obtenu": "Aucun bouton « Retirer » dans le panier (route POST /cart/remove/<id> non reliée) ; seul moyen : mettre la quantité à 0.",
+  "bug": "BUG-022",
+  "preuves": [
+   "TC-EXT-18_01_panier.png",
+   "TC-EXT-18.txt"
+  ]
+ },
+ "TC-EXT-19": {
+  "statut": "Fail",
+  "obtenu": "12 échecs consécutifs sans délai, ni blocage, ni CAPTCHA ; la connexion valide réussit immédiatement.",
+  "bug": "BUG-023",
+  "preuves": [
+   "TC-EXT-19_01_connexion_apres_12_echecs.png",
+   "TC-EXT-19.txt"
+  ]
+ },
+ "TC-EXT-20": {
+  "statut": "Fail",
+  "obtenu": "Erreur 500 avec la page interactive du débogueur Werkzeug (traceback et chemins du serveur) ; journal : « Debug mode: on », « Running on all addresses (0.0.0.0) ».",
+  "bug": "BUG-023",
+  "preuves": [
+   "TC-EXT-20_01_accueil.png",
+   "TC-EXT-20.txt"
+  ]
+ }
+}
