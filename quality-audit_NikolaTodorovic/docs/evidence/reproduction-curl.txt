@@ -1,0 +1,11 @@
+== Reproduction des bugs sur http://127.0.0.1:5000
+  REPRODUIT      BUG-001  POST PayPal -> HTTP 201 ; commandes 1 -> 3 (attendu +1) ; stock 100 -> 98 (attendu -1)
+  REPRODUIT      BUG-002  commande chez Night Sushi (FERMÉ) -> HTTP 201 (attendu 409)
+  REPRODUIT      BUG-003  espèces 1 EUR pour 14,89 EUR -> HTTP 201, monnaie à rendre -13.89 (attendu 400)
+  REPRODUIT      BUG-004  3 x Salmon Bowl (stock 2) -> HTTP 201, stock final -1 ; Veggie Burger (stock 0) -> HTTP 201 (attendu 409)
+  REPRODUIT      BUG-005  1 x Frites maison (3,50 EUR, minimum 20 EUR) -> HTTP 201 (attendu 400)
+  REPRODUIT      BUG-006  ATLAS15 sur 35,80 EUR -> remise 3.58 (taux 10.0 %) ; attendu 5.37 (15 %)
+  REPRODUIT      BUG-007  subtotal="NaN" -> HTTP 500 ; corps JSON tableau -> HTTP 500 (attendu 400 / 400)
+  REPRODUIT      BUG-008  connexion avec ?next=https://example.org -> HTTP 302, Location: https://example.org (attendu : page interne)
+
+8 bugs sur 8 reproduits.

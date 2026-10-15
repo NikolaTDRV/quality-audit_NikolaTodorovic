@@ -1,0 +1,9 @@
+# subtotal=20.0
+$ curl -i -X POST -H 'X-API-Key: quickorder-demo-key' -H 'Content-Type: application/json' -d '{"code": "WELCOME10", "subtotal": 20.0}' http://127.0.0.1:5000/api/coupons/validate
+HTTP 200 OK | Content-Type: application/json
+{
+  "code": "WELCOME10",
+  "discount": 2.0,
+  "discount_percent": 10.0,
+  "valid": true
+}

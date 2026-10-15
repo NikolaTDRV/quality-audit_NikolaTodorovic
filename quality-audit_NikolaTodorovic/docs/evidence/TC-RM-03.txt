@@ -1,0 +1,65 @@
+Commande confirmée !
+← Mes commandes
+Commande #2
+confirmed
+Burger Factory
+
+13/10/2026 12:26
+
+Classic Burger × 1
+11.90 €
+Sous-total
+11.90 €
+Livraison
+2.99 €
+Réduction
+- 0.00 €
+Total
+14.89 €
+Paiement
+
+paid · cash
+
+Montant remis : 1.00 €
+Monnaie calculée : -13.89 €
+
+Livraison
+
+10 rue de Paris
+75001 Paris
+
+Annuler la commande
+Commander à nouveau
+Cas « montant remis vide » :
+Commande confirmée !
+← Mes commandes
+Commande #3
+confirmed
+Burger Factory
+
+13/10/2026 12:26
+
+Classic Burger × 1
+11.90 €
+Sous-total
+11.90 €
+Livraison
+2.99 €
+Réduction
+- 0.00 €
+Total
+14.89 €
+Paiement
+
+paid · cash
+
+Montant remis : 0.00 €
+Monnaie calculée : -14.89 €
+
+Livraison
+
+10 rue de Paris
+75001 Paris
+
+Annuler la commande
+Commander à nouveau

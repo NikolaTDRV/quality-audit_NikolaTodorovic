@@ -1,0 +1,2 @@
+Stock 2, flashs ['Salmon Bowl ajouté au panier.', 'Promotion annoncée : Livraison gratuite dès 30 € avec TOKYO30', 'HORS STOCK — Ce produit est actuellement indisponible.'], panier 'Votre panier\nProduit\tPrix\tQté\tTotal\t\nSalmon Bowl\t15.90 €\t\t47.70 €\t\nSous-total 47.70 €\nLivraison 3.49 €\nTotal 51.19 €\nMettre à jourPasser commande\nVider le panier'
+Commande #2 confirmée (confirmed) ; stock du Salmon Bowl : 2 → -1

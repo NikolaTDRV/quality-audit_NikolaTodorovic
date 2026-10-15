@@ -1,0 +1,95 @@
+# Liste des restaurants
+$ curl -i -X GET -H 'X-API-Key: quickorder-demo-key' http://127.0.0.1:5000/api/restaurants
+HTTP 200 OK | Content-Type: application/json
+{
+  "count": 6,
+  "items": [
+    {
+      "address": "7 boulevard Voltaire, Paris",
+      "category": "Marocain",
+      "delivery_fee": 2.99,
+      "delivery_time_min": 40,
+      "description": "Cuisine marocaine familiale et généreuse.",
+      "id": 5,
+      "is_open": true,
+      "minimum_order": 25.0,
+      "name": "Couscous Atlas",
+      "promo_text": "🎟️ Code ATLAS15 annoncé comme -15% sur ce restaurant",
+      "rating": 4.9
+    },
+    {
+      "address": "8 avenue de l'Opéra, Paris",
+      "category": "Japonais",
+      "delivery_fee": 3.49,
+      "delivery_time_min": 35,
+      "description": "Cuisine japonaise et bowls frais.",
+      "id": 2,
+      "is_open": true,
+      "minimum_order": 15.0,
+      "name": "Tokyo Bowl",
+      "promo_text": "Livraison gratuite dès 30 € avec TOKYO30",
+      "rating": 4.8
+    },
+    {
+      "address": "18 rue du Commerce, Paris",
+      "category": "Burgers",
+      "delivery_fee": 2.99,
+      "delivery_time_min": 25,
+      "description": "Burgers, frites et menus généreux.",
+      "id": 1,
+      "is_open": true,
+      "minimum_order": 20.0,
+      "name": "Burger Factory",
+      "promo_text": "",
+      "rating": 4.7
+    },
+    {
+      "address": "41 rue de Lyon, Paris",
+      "category": "Healthy",
+      "delivery_fee": 1.99,
+      "delivery_time_min": 20,
+      "description": "Salades, wraps et options végétariennes.",
+      "id": 3,
+      "is_open": true,
+      "minimum_order": 12.0,
+      "name": "Green Kitchen",
+      "promo_text": "",
+      "rating": 4.5
+    },
+    {
+      "address": "22 rue de la République, Paris",
+      "category": "Italien",
+      "delivery_fee": 2.49,
+      "delivery_time_min": 30,
+      "description": "Pizzas romaines, pâtes et desserts italiens.",
+      "id": 4,
+      "is_open": true,
+      "minimum_order": 12.0,
+      "name": "Pizza Roma",
+      "promo_text": "",
+      "rating": 4.3
+    },
+    {
+      "address": "5 rue des Tests, Paris",
+      "category": "Japonais",
+      "delivery_fee": 2.99,
+      "delivery_time_min": 45,
+      "description": "Restaurant fermé — uniquement pour les tests QA.",
+      "id": 6,
+      "is_open": false,
+      "minimum_order": 10.0,
+      "name": "Night Sushi",
+      "promo_text": "Fermé aujourd'hui",
+      "rating": 3.8
+    }
+  ]
+}
+
+# Santé sans clé
+$ curl -i -X GET  http://127.0.0.1:5000/api/health
+HTTP 200 OK | Content-Type: application/json
+{
+  "service": "quickorder",
+  "status": "ok",
+  "timestamp": "2026-10-13T12:25:51.436893"
+}

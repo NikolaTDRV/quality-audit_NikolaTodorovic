@@ -1,0 +1,20 @@
+# quantité 0
+$ curl -i -X POST -H 'X-API-Key: quickorder-demo-key' -H 'Content-Type: application/json' -d '{"items": [{"product_id": 1, "quantity": 0}], "payment_method": "card"}' http://127.0.0.1:5000/api/orders
+HTTP 400 BAD REQUEST | Content-Type: application/json
+{
+  "error": "quantity must be between 1 and 20"
+}
+
+# quantité -1
+$ curl -i -X POST -H 'X-API-Key: quickorder-demo-key' -H 'Content-Type: application/json' -d '{"items": [{"product_id": 1, "quantity": -1}], "payment_method": "card"}' http://127.0.0.1:5000/api/orders
+HTTP 400 BAD REQUEST | Content-Type: application/json
+{
+  "error": "quantity must be between 1 and 20"
+}
+
+# quantité 'abc'
+$ curl -i -X POST -H 'X-API-Key: quickorder-demo-key' -H 'Content-Type: application/json' -d '{"items": [{"product_id": 1, "quantity": "abc"}], "payment_method": "card"}' http://127.0.0.1:5000/api/orders
+HTTP 400 BAD REQUEST | Content-Type: application/json
+{
+  "error": "quantity must be an integer"
+}

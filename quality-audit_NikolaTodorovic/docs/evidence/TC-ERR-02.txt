@@ -1,0 +1,7 @@
+# Sans clé
+$ curl -i -X GET  http://127.0.0.1:5000/api/restaurants
+HTTP 401 UNAUTHORIZED | Content-Type: application/json
+{
+  "error": "missing or invalid X-API-Key",
+  "hint": "Use Swagger > Authorize"
+}

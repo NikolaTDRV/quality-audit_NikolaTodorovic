@@ -1,0 +1,41 @@
+# subtotal=NaN
+$ curl -i -X POST -H 'X-API-Key: quickorder-demo-key' -H 'Content-Type: application/json' -d '{"code": "WELCOME10", "subtotal": "NaN"}' http://127.0.0.1:5000/api/coupons/validate
+HTTP 500 INTERNAL SERVER ERROR | Content-Type: text/html; charset=utf-8
+<!doctype html>
+<html lang=en>
+  <head>
+    <title>decimal.InvalidOperation: [&lt;class &#39;decimal.InvalidOperation&#39;&gt;]
+ // Werkzeug Debugger</title>
+    <link rel="stylesheet" href="?__debugger__=yes&amp;cmd=resource&amp;f=style.css">
+    <link rel="shortcut icon"
+        href="?__debugger__=yes&amp;cmd=resource&amp;f=console.png">
+    <script src="?__debugger__=yes&amp;cmd=resource&amp;f
+[… corps HTML tronqué …]
+
+# subtotal=Infinity
+$ curl -i -X POST -H 'X-API-Key: quickorder-demo-key' -H 'Content-Type: application/json' -d '{"code": "WELCOME10", "subtotal": "Infinity"}' http://127.0.0.1:5000/api/coupons/validate
+HTTP 500 INTERNAL SERVER ERROR | Content-Type: text/html; charset=utf-8
+<!doctype html>
+<html lang=en>
+  <head>
+    <title>decimal.InvalidOperation: [&lt;class &#39;decimal.InvalidOperation&#39;&gt;]
+ // Werkzeug Debugger</title>
+    <link rel="stylesheet" href="?__debugger__=yes&amp;cmd=resource&amp;f=style.css">
+    <link rel="shortcut icon"
+        href="?__debugger__=yes&amp;cmd=resource&amp;f=console.png">
+    <script src="?__debugger__=yes&amp;cmd=resource&amp;f
+[… corps HTML tronqué …]
+
+# subtotal=1e999
+$ curl -i -X POST -H 'X-API-Key: quickorder-demo-key' -H 'Content-Type: application/json' -d '{"code": "WELCOME10", "subtotal": "1e999"}' http://127.0.0.1:5000/api/coupons/validate
+HTTP 500 INTERNAL SERVER ERROR | Content-Type: text/html; charset=utf-8
+<!doctype html>
+<html lang=en>
+  <head>
+    <title>decimal.InvalidOperation: [&lt;class &#39;decimal.InvalidOperation&#39;&gt;]
+ // Werkzeug Debugger</title>
+    <link rel="stylesheet" href="?__debugger__=yes&amp;cmd=resource&amp;f=style.css">
+    <link rel="shortcut icon"
+        href="?__debugger__=yes&amp;cmd=resource&amp;f=console.png">
+    <script src="?__debugger__=yes&amp;cmd=resource&amp;f
+[… corps HTML tronqué …]

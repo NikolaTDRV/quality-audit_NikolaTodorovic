@@ -1,0 +1,13 @@
+Récap : Burger Factory
+
+Commande minimum : 20.00 €
+
+Sous-total
+23.80 €
+Livraison
+2.99 €
+Réduction
+- 2.38 €
+Total
+24.41 €
+Statut affiché tel quel dans le badge : 'confirmed'

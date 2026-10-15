@@ -1,0 +1,4 @@
+Navigations : ['http://127.0.0.1:5000/login?next=https://example.org', 'https://example.org/']
+URL finale : https://example.org/
+$ curl -i -X POST -d 'email=alice@example.com&password=…' 'http://127.0.0.1:5000/login?next=https://example.org'
+HTTP 302 | Location: https://example.org

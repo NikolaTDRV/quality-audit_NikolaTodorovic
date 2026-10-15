@@ -1,0 +1,1 @@
+Flashs : ['Classic Burger ajouté au panier.', 'HORS STOCK — Ce produit est actuellement indisponible.'] ; totaux panier : {'sous_total': '11.90', 'livraison': '2.99', 'total': '14.89'}

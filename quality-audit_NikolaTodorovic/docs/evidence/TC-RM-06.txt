@@ -1,0 +1,13 @@
+Récapitulatif du checkout :
+Tokyo Bowl
+
+Commande minimum : 15.00 €
+
+Sous-total
+40.50 €
+Livraison
+3.49 €
+Réduction
+- 3.49 €
+Total
+40.50 €

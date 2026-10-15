@@ -1,0 +1,1 @@
+Flashs ajout : ['Late Sushi Box ajouté au panier.', "Promotion annoncée : Fermé aujourd'hui", 'HORS STOCK — Ce produit est actuellement indisponible.'] ; URL finale : http://127.0.0.1:5000/orders/2

@@ -1,49 +1,50 @@
-# Audit qualité de QuickOrder V3.1
+# Audit qualité de QuickOrder V3.1 (campagne ciblée : 24 cas, 8 bugs)
 
-Audit qualité réalisé avant la mise en production de **QuickOrder**, plateforme de livraison de repas (Flask, SQLite, API REST). Mission : évaluer la qualité de l'application existante, prouver les anomalies et recommander **Go / No-Go**. Le code source de QuickOrder n'a **pas été modifié** pendant la campagne.
+Audit qualité réalisé avant la mise en production de **QuickOrder**, plateforme de livraison de repas (Flask, SQLite, API REST). Mission : évaluer la qualité, prouver les anomalies et recommander **Go / No-Go**. Le code source de QuickOrder n'a **pas été modifié**.
 
-Tous les cas ont été **exécutés** sur l'application réelle (interface pilotée dans Chromium, requêtes HTTP sur l'API) ; les résultats, captures, traces de requêtes et la vidéo du double paiement PayPal sont dans `docs/evidence/`.
+Les **24 cas** ont tous été **exécutés** sur l'application réelle (interface pilotée dans Chromium, requêtes HTTP sur l'API). Les **8 anomalies** sont **reproductibles** : le script `docs/automation/reproduce_bugs.sh` les rejoue en ligne de commande et affiche `REPRODUIT` (8 / 8).
 
 ## Verdict : **NO-GO**
 
 | Indicateur | Valeur |
 |---|---|
-| Cas de test | **99** (16 nominaux, 13 limites, 23 erreurs, 25 règles métier, 22 complémentaires) |
-| Résultats | **48 Pass · 46 Fail · 4 Blocked · 1 Skipped** |
-| Taux de réussite (Pass / exécutés) | 51,1 % global · 48,5 % sur les cas P1 |
-| Anomalies | **29** : 1 Critique, 15 Majeures, 13 Mineures (5 en P1, 11 en P2, 13 en P3) |
-| Retours utilisateurs | 3 personas × 3 scénarios, 12 observations (voir l'encadré de transparence de `docs/user-feedback.md`) |
-| Plan d'amélioration | 13 améliorations priorisées, feuille de route en 4 sprints |
+| Cas de test | **24** : 6 nominaux, 6 limites, 6 erreurs, 6 règles métier |
+| Résultats | **16 Pass · 8 Fail** |
+| Taux de réussite | 66,7 % global · 61,1 % sur les cas P1 |
+| Anomalies | **8** : 1 Critique, 7 Majeures (4 en P1, 4 en P2) |
+| Retours utilisateurs | 3 personas, 3 scénarios, 5 observations (voir l'encadré de transparence de `docs/user-feedback.md`) |
+| Plan d'amélioration | 7 améliorations priorisées, feuille de route en 3 sprints |
 
-Problèmes les plus graves : paiement PayPal qui crée **deux commandes** (BUG-001) ; commandes possibles chez un **restaurant fermé**, en **rupture de stock** ou **sous le minimum** (BUG-002, 004, 005) ; paiement en **espèces** accepté pour 1 € sur 14,89 € (BUG-003) ; **ATLAS15** annoncé à 15 % et appliqué à 10 % (BUG-007) ; **redirection ouverte** et configuration par défaut non sécurisée (BUG-015, 023) ; **erreurs 500** de l'API sur entrées mal formées (BUG-010) ; installation **Docker** inutilisable sous Linux/macOS (BUG-025). Détail et conditions de levée dans [`docs/execution-report.md`](docs/execution-report.md).
+Anomalies : paiement PayPal qui crée **deux commandes** (BUG-001, Critique) · commande chez un **restaurant fermé** (BUG-002) · paiement en **espèces** insuffisant accepté (BUG-003) · **stock** dépassé ou produit en rupture commandable (BUG-004) · **minimum de commande** ignoré (BUG-005) · **ATLAS15** annoncé à 15 % mais appliqué à 10 % (BUG-006) · **erreurs 500** et débogueur exposé sur l'API (BUG-007) · **redirection ouverte** après connexion (BUG-008).
 
 ## Organisation du dépôt
 
 ```text
-quality-audit/
+quality-audit2/
 ├── README.md
 └── docs/
-    ├── test-strategy.md        Stratégie : périmètre, parcours critiques, types de tests, critères Go / No-Go
-    ├── risk-matrix.md          Matrice probabilité × impact (20 risques) et règle de priorisation
-    ├── test-cases.xlsx         99 cas de test, résultats réels, bugs et synthèse calculée par formules
-    ├── execution-report.md     Chiffres de la campagne, analyse, décision Go / No-Go, plan de revalidation
-    ├── bug-reports/            29 fiches BUG-001 à BUG-029 (preuves intégrées) et leur index (README.md)
-    ├── user-feedback.md        Tests utilisateurs (personas) : scénarios, observations, priorisation
-    ├── improvement-plan.md     13 améliorations (MoSCoW, effort, critères d'acceptation) et feuille de route
-    ├── evidence/               Captures PNG, traces requête/réponse (.txt), vidéo du doublon PayPal
-    └── automation/             Scripts Playwright + requests qui ont produit les résultats (results.json)
+    ├── test-strategy.md      Stratégie : périmètre, parcours critiques, approche, critères Go / No-Go
+    ├── risk-matrix.md        Matrice probabilité × impact (10 risques)
+    ├── test-cases.xlsx       24 cas, résultats réels, bugs, synthèse calculée par formules
+    ├── execution-report.md   Chiffres, analyse, décision Go / No-Go, plan de revalidation
+    ├── bug-reports/          8 fiches BUG-001 à BUG-008 (preuves intégrées) et leur index
+    ├── user-feedback.md      Tests utilisateurs (personas) : scénarios, observations, priorisation
+    ├── improvement-plan.md   7 améliorations (MoSCoW, effort, critères d'acceptation), feuille de route
+    ├── evidence/             Captures PNG, traces requête/réponse, vidéo du double paiement PayPal,
+    │                         reproduction-curl.txt (sortie du rejeu des 8 bugs)
+    └── automation/           run_campaign.py (24 cas), reproduce_bugs.sh (8 bugs), results.json
 ```
 
 ## Par où commencer
 
 1. [`docs/execution-report.md`](docs/execution-report.md) : la décision et les chiffres.
-2. [`docs/bug-reports/README.md`](docs/bug-reports/README.md) : l'index des anomalies, de la plus urgente à la moins urgente.
-3. [`docs/test-cases.xlsx`](docs/test-cases.xlsx) : le détail des cas (onglet « Cas de test », filtrable par statut, priorité, catégorie ou bug ; colonne « Preuves » vers `docs/evidence/`).
+2. [`docs/bug-reports/README.md`](docs/bug-reports/README.md) : les 8 fiches (titre, contexte, préconditions, étapes, résultat attendu, résultat obtenu, preuve, sévérité, priorité).
+3. [`docs/test-cases.xlsx`](docs/test-cases.xlsx) : les 24 cas (filtrables par statut, priorité, catégorie ou bug).
 4. [`docs/improvement-plan.md`](docs/improvement-plan.md) : la suite à donner.
 
 Traçabilité : **risque (R-xx) → cas de test (TC-…) → anomalie (BUG-…) → amélioration (AM-…)**.
 
-## Rejouer la campagne
+## Rejouer
 
 ```bash
 # 1. Installer et lancer QuickOrder (voir docs/INSTALLATION.md du projet)
@@ -52,25 +53,28 @@ python -m pip install -r requirements.txt
 python seed.py        # ⚠ réinitialise la base
 python run.py         # http://127.0.0.1:5000
 
-# 2. Dans un autre terminal : installer les outils de test et lancer la campagne
+# 2a. Rejouer les 8 bugs en ligne de commande (base fraîchement seedée, curl requis)
+bash docs/automation/reproduce_bugs.sh http://127.0.0.1:5000   # affiche REPRODUIT / NON REPRODUIT
+
+# 2b. Rejouer les 24 cas (autre terminal)
 python -m pip install playwright requests && python -m playwright install chromium
-export QO_REPO=/chemin/vers/quickorder-qa-project     # dossier du projet (seed.py est relancé avant chaque cas)
-export DATABASE_URL=sqlite:////chemin/vers/la/base.db # la MÊME base que celle du serveur
-cd docs/automation && python run_campaign.py          # tous les cas ; ou : python run_campaign.py TC-RM-09 TC-ERR-16
+export QO_REPO=/chemin/vers/quickorder-qa-project       # seed.py est relancé avant chaque cas
+export DATABASE_URL=sqlite:////chemin/vers/la/base.db   # la MÊME base que celle du serveur
+cd docs/automation && python run_campaign.py            # ou : python run_campaign.py TC-RM-04 TC-LIM-06
 ```
 
-Chaque cas réinitialise la base (`seed.py`), exécute ses étapes, enregistre les preuves dans `docs/evidence/` et écrit `docs/automation/results.json`. `swagger_check.py` charge Swagger UI (qui récupère `swagger-ui-dist` sur un CDN : accès Internet nécessaire pour TC-EXT-02).
+`reproduce_bugs.sh` modifie la base (commandes, stock) : relancer `python seed.py` entre deux exécutions.
 
-Comptes : `alice@example.com` / `Password123!` · `bob@example.com` / `Password123!` · `admin@quickorder.local` / `Admin123!` · clé API Swagger : `quickorder-demo-key`.
+Comptes : `alice@example.com` / `Password123!` · `bob@example.com` / `Password123!` · `admin@quickorder.local` / `Admin123!` · clé API : `quickorder-demo-key`.
 
 ## Limites à connaître
 
-- **Docker Compose n'a pas été lancé** (pas de démon Docker dans l'environnement de test) : TC-ENV-01 / BUG-025 reposent sur l'exécution directe de `docker-entrypoint.sh` (« Permission denied ») et sur le mode Git du fichier (100644).
+- **Campagne ciblée** : 24 cas ; favoris, avis, profil, administration des statuts et installation Docker ne sont pas évalués ici.
 - **Retours utilisateurs** : personas et verbatims illustratifs, à confirmer avec de vrais utilisateurs.
-- Un seul moteur de navigateur (Chromium) ; mobile émulé à 375 px.
+- Un seul navigateur (Chromium) ; pas de test de charge.
 
 ## Conventions
 
-- **Sévérité** : Critique (perte financière ou blocage) · Majeure (règle métier, sécurité, parcours dégradé) · Mineure (confort, cohérence).
+- **Sévérité** : Critique (perte financière ou blocage) · Majeure (règle métier, sécurité, parcours dégradé) · Mineure (confort).
 - **Priorité** : P1 (avant toute mise en production) · P2 (avant, ou juste après si le risque est accepté) · P3 (backlog).
-- **Statuts de test** : Pass · Fail · Blocked (impossible à exécuter, cause tracée) · Skipped (règle non tranchée, motif tracé).
+- **Statuts** : Pass · Fail (écart constaté, bug lié).

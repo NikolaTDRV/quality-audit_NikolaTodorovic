@@ -1,0 +1,14 @@
+Récapitulatif du checkout :
+Couscous Atlas
+
+Commande minimum : 25.00 €
+
+Sous-total
+35.80 €
+Livraison
+2.99 €
+Réduction
+- 3.58 €
+Total
+35.21 €
+Sous-total 35.80 ; réduction obtenue 3.58 ; attendue à 15 % : 5.37
